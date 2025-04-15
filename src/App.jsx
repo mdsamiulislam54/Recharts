@@ -27,7 +27,13 @@ function App() {
         </LineChart>
       </div>
       {/* bar chart  */}
-    
+      <div>
+        <BarChart width={900} height={500} data={students} >
+        <YAxis dataKey='id'/>
+          <XAxis dataKey='name'/>
+          <Bar dataKey='math' label={{ position: 'top' }} fill='red'/>
+        </BarChart>
+      </div>
     </>
   )
 }
