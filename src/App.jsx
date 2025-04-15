@@ -1,5 +1,5 @@
 
-import { Bar, BarChart, Line, LineChart, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart,  Line, LineChart, Tooltip, XAxis, YAxis ,CartesianGrid, Area, AreaChart} from 'recharts';
 import './App.css'
 const students = [
   { id: 101, name: "Samiul Islam", math: 85, physics: 78, chemistry: 92 },
@@ -21,6 +21,8 @@ function App() {
         <LineChart width={900} height={500} data={students}>
           <YAxis dataKey='id'/>
           <XAxis dataKey='name'/>
+          <Tooltip/>
+          <CanvasGradient stroke="#ccc" strokeDasharray="5 5" />
            <Line dataKey='math' stroke='red'></Line>
          
         
@@ -31,8 +33,23 @@ function App() {
         <BarChart width={900} height={500} data={students} >
         <YAxis dataKey='id'/>
           <XAxis dataKey='name'/>
-          <Bar dataKey='math' label={{ position: 'top' }} fill='red'/>
+          <Tooltip wrapperStyle={{width:100, backgroundColor:"red"}} />
+          <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+          <Bar dataKey='math' label={{ position: 'top' }} fill='red' barSize={30}/>
         </BarChart>
+      </div>
+      {/* Area Chart  */}
+      <div>
+      <AreaChart width={900} height={500} data={students} >
+        <YAxis dataKey='id'/>
+          <XAxis dataKey='name'/>
+          <Tooltip wrapperStyle={{width:100, backgroundColor:"blue"}} />
+          <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+        
+          <Area dataKey='math' label={{ position: 'top' }} fill='green' barSize={30}/>
+          <Area dataKey='physics' label={{ position: 'top' }} fill='red' barSize={30}/>
+          <Area dataKey='chemistry' label={{ position: 'top' }} fill='pink' barSize={30}  stroke="#8884d8"/>
+        </AreaChart>
       </div>
     </>
   )
