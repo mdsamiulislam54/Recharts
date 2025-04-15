@@ -36,8 +36,9 @@ function App() {
 
   return (
     <>
+    <div className='w-7/12 mx-auto'>
     {/* line chart */}
-      <div>
+      <div className='mb-10'>
         <LineChart width={900} height={500} data={students}>
           <YAxis dataKey='id'/>
           <XAxis dataKey='name'/>
@@ -49,7 +50,7 @@ function App() {
         </LineChart>
       </div>
       {/* bar chart  */}
-      <div>
+      <div className='mb-10'>
         <BarChart width={900} height={500} data={students} >
         <YAxis dataKey='id'/>
           <XAxis dataKey='name'/>
@@ -59,7 +60,7 @@ function App() {
         </BarChart>
       </div>
       {/* Area Chart  */}
-      <div>
+      <div className='mb-10'>
       <AreaChart width={900} height={500} data={students} >
         <YAxis dataKey='id'/>
           <XAxis dataKey='name'/>
@@ -91,6 +92,7 @@ function App() {
           <Pie data={data01} dataKey='value' cx='50%' cy='50%' outerRadius={60} fill='#8884d8' label/>
           <Pie data={data02} dataKey='value' cx='50%' cy='50%' outerRadius={90} innerRadius={70} fill='#82ca9d' label/>
         </PieChart>
+      </div>
       </div>
     </>
   )
