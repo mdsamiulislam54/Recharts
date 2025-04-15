@@ -1,5 +1,5 @@
 
-import { Bar, BarChart,  Line, LineChart, Tooltip, XAxis, YAxis ,CartesianGrid, Area, AreaChart, ComposedChart, Scatter} from 'recharts';
+import { Bar, BarChart,  Line, LineChart, Tooltip, XAxis, YAxis ,CartesianGrid, Area, AreaChart, ComposedChart, Scatter, PieChart, Pie} from 'recharts';
 import './App.css'
 const students = [
   { id: 101, name: "Samiul Islam", math: 85, physics: 78, chemistry: 92 },
@@ -10,6 +10,26 @@ const students = [
   { id: 106, name: "Shorna Sultana", math: 88, physics: 85, chemistry: 90 },
   { id: 107, name: "Hasibul Hasan", math: 79, physics: 75, chemistry: 82 },
 ];
+const data01 = [
+  { name: 'Group A', value: 400 },
+  { name: 'Group B', value: 300 },
+  { name: 'Group C', value: 300 },
+  { name: 'Group D', value: 200 },
+];
+const data02 = [
+  { name: 'A1', value: 100 },
+  { name: 'A2', value: 300 },
+  { name: 'B1', value: 100 },
+  { name: 'B2', value: 80 },
+  { name: 'B3', value: 40 },
+  { name: 'B4', value: 30 },
+  { name: 'B5', value: 50 },
+  { name: 'C1', value: 100 },
+  { name: 'C2', value: 200 },
+  { name: 'D1', value: 150 },
+  { name: 'D2', value: 50 },
+];
+
 
 function App() {
 
@@ -65,6 +85,13 @@ function App() {
          
 
       </ComposedChart>
+      {/* pie Chart  */}
+      <div>
+        <PieChart width={900} height={500} >
+          <Pie data={data01} dataKey='value' cx='50%' cy='50%' outerRadius={60} fill='#8884d8' label/>
+          <Pie data={data02} dataKey='value' cx='50%' cy='50%' outerRadius={90} innerRadius={70} fill='#82ca9d' label/>
+        </PieChart>
+      </div>
     </>
   )
 }
