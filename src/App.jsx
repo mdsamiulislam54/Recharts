@@ -1,5 +1,5 @@
 
-import { Bar, BarChart,  Line, LineChart, Tooltip, XAxis, YAxis ,CartesianGrid, Area, AreaChart} from 'recharts';
+import { Bar, BarChart,  Line, LineChart, Tooltip, XAxis, YAxis ,CartesianGrid, Area, AreaChart, ComposedChart, Scatter} from 'recharts';
 import './App.css'
 const students = [
   { id: 101, name: "Samiul Islam", math: 85, physics: 78, chemistry: 92 },
@@ -51,6 +51,20 @@ function App() {
           <Area dataKey='chemistry' label={{ position: 'top' }} fill='pink' barSize={30}  stroke="#8884d8"/>
         </AreaChart>
       </div>
+      {/* composedChart  */}
+      <ComposedChart width={900} height={500} data={students} >
+      <YAxis dataKey='id'/>
+          <XAxis dataKey='name'/>
+          <Tooltip wrapperStyle={{width:100, backgroundColor:"blue"}} />
+          <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+          <Area dataKey='math'  fill="#8884d8" barSize={30} />
+          <Bar dataKey='math'  fill="#413ea0" barSize={30} />
+          <Line dataKey='math'  fill='red'  />
+          <Scatter dataKey='id' fill="red"/>
+         
+         
+
+      </ComposedChart>
     </>
   )
 }
